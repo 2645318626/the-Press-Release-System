@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>新闻发布系统</title>
+    <link rel="stylesheet" href="static/css/index.css" type="text/css">
+    <script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+
+    <script>
+        window.onload = function () {
+            let loginBtn = document.getElementById('loginBtn');
+            let login_form = document.getElementById('login_form');
+            let login_name = document.getElementById('login_name');
+            let login_pwd = document.getElementById('login_pwd');
+            let searchBox = document.getElementById('searchBox');
+            let searchBtn = document.getElementById('searchBtn');
+
+            searchBtn.onclick = function () {
+                alert(searchBox.value);
+            }
+
+            loginBtn.onclick = function () {
+                if (login_name.value.trim() == "") {
+                    alert("用户名不能为空!");
+                    login_name.focus();
+                    return false;
+                }
+                if (login_pwd.value.trim() == "") {
+                    alert("密码不能为空!");
+                    login_pwd.focus();
+                    return false;
+                }
+                login_form.action = "/test1_war_exploded/userServlet";
+                login_form.submit();
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="entry">
+    <div class="login1">
+        <form id="login_form" action="" method="post">
+            <label>用户名</label>
+            <input type="text" name="logUsername" id="login_name">
+            <label>密码</label>
+            <input type="password" name="logPassword" id="login_pwd">
+            <input type="button" id="loginBtn" value="登录">
+            <input type="button" id="registerBtn" onclick="window.location.href='register.html'" value="注册">
+            <a href="#" id="forgetPwd">忘记密码？</a>
+            <label id="error"></label>
+        </form>
+    </div>
+    <div class="login1" style="display: none">
+        <label>欢迎使用新闻发布系统！</label>
+        <a href="exit.jsp" target="_top">退出</a>
+    </div>
+
+    <div class="login2">
+        <a href="adminLogin.jsp">管理员入口</a>
+    </div>
+    <div class="login2" style="display: none">
+        <label>欢迎使用新闻发布系统！</label>
+        <a href="exit.jsp" target="_top">退出</a>
+    </div>
+</div>
+<!--<body class="menu">-->
+<nav class="navbar">
+    <!--    <ul class="nva">-->
+    <div class="container navbar-content">
+        <label><a href="#">首页</a></label>
+        <label class="location"><a href="#" id="newspages">新闻中心</a>
+            <ul class="sub-nav">
+                <div class="news_left">
+                    <li><a href="#" class="new">娱乐</a></li>
+                    <li><a href="#" class="new">社会</a></li>
+                    <li><a href="#" class="new">财经</a></li>
+                    <li><a href="#" class="new">科技</a></li>
+                    <li><a href="#" class="new">健康</a></li>
+                </div>
+                <div class="news_right">
+                    <li><a href="#" class="new">教育</a></li>
+                    <li><a href="#" class="new">旅游</a></li>
+                    <li><a href="#" class="new">军事</a></li>
+                    <li><a href="#" class="new">其他</a></li>
+                </div>
+            </ul>
+        </label>
+        <!--已登陆-->
+        <label><a href="#">编辑新闻</a></label>
+        <label><a href="newsServlet?action=newspagesShow">更多新闻</a></label>
+        <label><a href="newsServlet?action=editBoard&dom=boardShow">公告栏</a></label>
+        <label><a href="newsServlet?action=showNews&from=user">编辑新闻</a></label>
+        <label><a href="newsServlet?action=editBoard&dom=showBoardList">公告栏编辑</a></label>
+        <form action="#">
+            <label><input type="text" id="searchBox" placeholder="关键词" value="nosh"></label>
+            <label>
+                <button type="button" id="searchBtn"></button>
+            </label></form>
+        <!--    </ul>-->
+    </div>
+</nav>
+
+<img src="/static/img/index/amazon-sprite_.png" class="index-bg">
+<div class="container">
+    <h1>新闻发布系统</h1>
+    <h4></h4>
+    <div class="news-list">
+        <div class="news-list-left">
+            <div class="about">
+                <h4></h4>
+                <div class="about-des">
+                    <p>编辑新闻</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-list-right">
+            <div class="news-list-item">
+                <div class="author-time">
+                    <span></span>发表于<span>2014-07-20 18:07:10</span>
+                </div>
+                <div class="news-des">
+                    <h3 class="news-title"><i></i><a href="#">【慕课访谈】美女程序员的蜕变史</a></h3>
+                    <div class="news-content-des">
+                        对于技术，她始终热爱并坚持着，尽管有过苦恼和纠结，但从未轻言放弃。所以今天她可以淡然的说出：人的一生都不会太顺利，都要经历点什么。
+                        谈到经历过的挫折，她也会眼睛潮湿，也许你会惊讶于这种感性的真情流露，特别是将这种情绪与程序员联系在一起的时候。而我始终认为，这种真实值得尊敬。
+                        如果你跟女程序员提到男程序员，可能她们的反应通常是“我们并不比他们差”！而Vivian则对“对手”赞赏有加——“我喜欢和他们交流，他们很有思想，能让我学到很多东西。”
+                        面对工作得心应手的她，背后有多少努力和付出？她是如何谈论哪些沉浸在代码世界里的“男同行们”？现在就带你走进一个美女程序员的世界。
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-list-item">
+                <div class="author-time">
+                    <span>慕女神</span>发表于<span>2014-07-20 18:07:10</span>
+                </div>
+                <div class="news-des">
+                    <h3 class="news-title"><i></i><a href="#">【慕课访谈】美女程序员的蜕变史</a></h3>
+                    <div class="news-content-des">
+                        对于技术，她始终热爱并坚持着，尽管有过苦恼和纠结，但从未轻言放弃。所以今天她可以淡然的说出：人的一生都不会太顺利，都要经历点什么。
+                        谈到经历过的挫折，她也会眼睛潮湿，也许你会惊讶于这种感性的真情流露，特别是将这种情绪与程序员联系在一起的时候。而我始终认为，这种真实值得尊敬。
+                        如果你跟女程序员提到男程序员，可能她们的反应通常是“我们并不比他们差”！而Vivian则对“对手”赞赏有加——“我喜欢和他们交流，他们很有思想，能让我学到很多东西。”
+                        面对工作得心应手的她，背后有多少努力和付出？她是如何谈论哪些沉浸在代码世界里的“男同行们”？现在就带你走进一个美女程序员的世界。
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-list-item">
+                <div class="author-time">
+                    <span>慕女神</span>发表于<span>2014-07-20 18:07:10</span>
+                </div>
+                <div class="news-des">
+                    <h3 class="news-title"><i></i><a href="#">【慕课访谈】美女程序员的蜕变史</a></h3>
+                    <div class="news-content-des">
+                        对于技术，她始终热爱并坚持着，尽管有过苦恼和纠结，但从未轻言放弃。所以今天她可以淡然的说出：人的一生都不会太顺利，都要经历点什么。
+                        谈到经历过的挫折，她也会眼睛潮湿，也许你会惊讶于这种感性的真情流露，特别是将这种情绪与程序员联系在一起的时候。而我始终认为，这种真实值得尊敬。
+                        如果你跟女程序员提到男程序员，可能她们的反应通常是“我们并不比他们差”！而Vivian则对“对手”赞赏有加——“我喜欢和他们交流，他们很有思想，能让我学到很多东西。”
+                        面对工作得心应手的她，背后有多少努力和付出？她是如何谈论哪些沉浸在代码世界里的“男同行们”？现在就带你走进一个美女程序员的世界。
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-list-item">
+                <div class="author-time">
+                    <span>慕女神</span>发表于<span>2014-07-20 18:07:10</span>
+                </div>
+                <div class="news-des">
+                    <h3 class="news-title"><i></i><a href="#">【慕课访谈】美女程序员的蜕变史</a></h3>
+                    <div class="news-content-des">
+                        对于技术，她始终热爱并坚持着，尽管有过苦恼和纠结，但从未轻言放弃。所以今天她可以淡然的说出：人的一生都不会太顺利，都要经历点什么。
+                        谈到经历过的挫折，她也会眼睛潮湿，也许你会惊讶于这种感性的真情流露，特别是将这种情绪与程序员联系在一起的时候。而我始终认为，这种真实值得尊敬。
+                        如果你跟女程序员提到男程序员，可能她们的反应通常是“我们并不比他们差”！而Vivian则对“对手”赞赏有加——“我喜欢和他们交流，他们很有思想，能让我学到很多东西。”
+                        面对工作得心应手的她，背后有多少努力和付出？她是如何谈论哪些沉浸在代码世界里的“男同行们”？现在就带你走进一个美女程序员的世界。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="copyright">
+        </footer>
+    </div>
+</div>
+</body>
+</html>

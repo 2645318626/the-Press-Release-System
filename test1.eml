@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_1_8" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
+		<testFolder url="file://$MODULE_DIR$/src/test/resources"/>
+		<excludeFolder url="file://$MODULE_DIR$/target"/>
+	</contentEntry>
+	<lib name="Tomcat 9.0.41" scope="PROVIDED"/>
+	<lib name="Maven: javax.servlet:javax.servlet-api:4.0.1" scope="PROVIDED"/>
+	<lib name="Maven: org.junit.jupiter:junit-jupiter-api:5.7.1" scope="TEST"/>
+	<lib name="Maven: org.apiguardian:apiguardian-api:1.1.0" scope="TEST"/>
+	<lib name="Maven: org.opentest4j:opentest4j:1.2.0" scope="TEST"/>
+	<lib name="Maven: org.junit.platform:junit-platform-commons:1.7.1" scope="TEST"/>
+	<lib name="Maven: org.junit.jupiter:junit-jupiter-engine:5.7.1" scope="TEST"/>
+	<lib name="Maven: org.junit.platform:junit-platform-engine:1.7.1" scope="TEST"/>
+	<lib name="Maven: com.google.protobuf:protobuf-java:3.11.4" scope="RUNTIME"/>
+	<levels>
+		<level name="Tomcat 9.0.41" value="application_server_libraries"/>
+		<level name="Hibernate 5.4.11-5.4.11" value="project"/>
+		<level name="Java EE 6-Java EE 6" value="project"/>
+		<level name="taglibs-standard-impl-1.2.1" value="project"/>
+		<level name="taglibs-standard-spec-1.2.1" value="project"/>
+		<level name="commons-fileupload-1.2.1" value="project"/>
+		<level name="commons-io-1.4" value="project"/>
+		<level name="javax.mail" value="project"/>
+		<level name="commons-dbutils-1.3" value="project"/>
+		<level name="druid-1.1.9" value="project"/>
+		<level name="Maven: commons-fileupload:commons-fileupload:1.2.1" value="project"/>
+		<level name="Maven: commons-io:commons-io:2.2" value="project"/>
+		<level name="Maven: javax.servlet:javax.servlet-api:4.0.1" value="project"/>
+		<level name="Maven: org.junit.jupiter:junit-jupiter-api:5.7.1" value="project"/>
+		<level name="Maven: org.apiguardian:apiguardian-api:1.1.0" value="project"/>
+		<level name="Maven: org.opentest4j:opentest4j:1.2.0" value="project"/>
+		<level name="Maven: org.junit.platform:junit-platform-commons:1.7.1" value="project"/>
+		<level name="Maven: org.junit.jupiter:junit-jupiter-engine:5.7.1" value="project"/>
+		<level name="Maven: org.junit.platform:junit-platform-engine:1.7.1" value="project"/>
+		<level name="Maven: com.google.protobuf:protobuf-java:3.11.4" value="project"/>
+		<level name="Maven: javax.servlet.jsp.jstl:jstl-api:1.2" value="project"/>
+		<level name="Maven: javax.servlet:servlet-api:2.5" value="project"/>
+		<level name="Maven: javax.servlet.jsp:jsp-api:2.1" value="project"/>
+		<level name="Maven: taglibs:standard:1.1.2" value="project"/>
+		<level name="mysql-connector-java-5.1.7-bin" value="project"/>
+		<level name="mysql-connector-java-8.0.22" value="project"/>
+		<level name="javax.mail  (3)" value="project"/>
+		<level name="mysql-connector-java-5.1.38" value="project"/>
+		<level name="javax.mail  (2)" value="project"/>
+		<level name="commons-io-1.4 (2)" value="project"/>
+	</levels>
+</component>

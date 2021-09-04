@@ -1,0 +1,347 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="zh-CN">-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <title>新闻发布系统</title>-->
+<!--    <link rel="stylesheet" href="../../static/css/text/1.css"-->
+<!--          type="text/css">-->
+<!--    <link rel="stylesheet"-->
+<!--          href="../../static/css/text/style_1_forum_index.css"-->
+<!--          type="text/css">-->
+<!--    <link rel="stylesheet"-->
+<!--          href="../../static/css/text/style_1_widthauto.css"-->
+<!--          type="text/css">-->
+<!--    <link rel="stylesheet"-->
+<!--          href="../../static/css/index.css"-->
+<!--          type="text/css">-->
+<!--    <script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>-->
+
+<!--    <script>-->
+<!--        window.onload = function () {-->
+<!--            let loginBtn = document.getElementById('loginBtn');-->
+<!--            let login_form = document.getElementById('login_form');-->
+<!--            let login_name = document.getElementById('login_name');-->
+<!--            let login_pwd = document.getElementById('login_pwd');-->
+<!--            let searchBox = document.getElementById('searchBox');-->
+<!--            let searchBtn = document.getElementById('searchBtn');-->
+
+<!--            searchBtn.onclick = function () {-->
+<!--                alert(searchBox.value);-->
+<!--            }-->
+
+<!--            loginBtn.onclick = function () {-->
+<!--                if (login_name.value.trim() == "") {-->
+<!--                    alert("用户名不能为空!");-->
+<!--                    login_name.focus();-->
+<!--                    return false;-->
+<!--                }-->
+<!--                if (login_pwd.value.trim() == "") {-->
+<!--                    alert("密码不能为空!");-->
+<!--                    login_pwd.focus();-->
+<!--                    return false;-->
+<!--                }-->
+<!--                login_form.action = "/test1_war_exploded/userServlet";-->
+<!--                login_form.submit();-->
+<!--            }-->
+
+<!--        }-->
+<!--    </script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="entry">-->
+<!--    <div class="login1">-->
+<!--        <form id="login_form" action="" method="post">-->
+<!--            <label>用户名</label>-->
+<!--            <input type="text" name="logUsername" id="login_name">-->
+<!--            <label>密码</label>-->
+<!--            <input type="password" name="logPassword" id="login_pwd">-->
+<!--            <input type="button" id="loginBtn" value="登录">-->
+<!--            <input type="button" id="registerBtn" onclick="window.location.href='register.html'" value="注册">-->
+<!--            <a href="#" id="forgetPwd">忘记密码？</a>-->
+<!--            <label id="error"></label>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--    <div class="login1" style="display: none">-->
+<!--        <label>欢迎使用新闻发布系统！</label>-->
+<!--        <a href="exit.jsp" target="_top">退出</a>-->
+<!--    </div>-->
+
+<!--    <div class="login2">-->
+<!--        <a href="adminLogin.jsp">管理员入口</a>-->
+<!--    </div>-->
+<!--    <div class="login2" style="display: none">-->
+<!--        <label>欢迎使用新闻发布系统！</label>-->
+<!--        <a href="exit.jsp" target="_top">退出</a>-->
+<!--    </div>-->
+<!--</div>-->
+<!--&lt;!&ndash;<body class="menu">&ndash;&gt;-->
+<!--<nav class="navbar">-->
+<!--    &lt;!&ndash;    <ul class="nva">&ndash;&gt;-->
+<!--    <div class="container navbar-content">-->
+<!--        <label><a href="#">首页</a></label>-->
+<!--        <label class="location"><a href="#" id="newspages">新闻中心</a>-->
+<!--            <ul class="sub-nav">-->
+<!--                <div class="news_left">-->
+<!--                    <li><a href="#" class="new">娱乐</a></li>-->
+<!--                    <li><a href="#" class="new">社会</a></li>-->
+<!--                    <li><a href="#" class="new">财经</a></li>-->
+<!--                    <li><a href="#" class="new">科技</a></li>-->
+<!--                    <li><a href="#" class="new">健康</a></li>-->
+<!--                </div>-->
+<!--                <div class="news_right">-->
+<!--                    <li><a href="#" class="new">教育</a></li>-->
+<!--                    <li><a href="#" class="new">旅游</a></li>-->
+<!--                    <li><a href="#" class="new">军事</a></li>-->
+<!--                    <li><a href="#" class="new">其他</a></li>-->
+<!--                </div>-->
+<!--            </ul>-->
+<!--        </label>-->
+<!--        &lt;!&ndash;已登陆&ndash;&gt;-->
+<!--        <label><a href="#">编辑新闻</a></label>-->
+<!--        <label><a href="#">更多</a></label>-->
+<!--        <form action="#">-->
+<!--            <label><input type="text" id="searchBox" placeholder="关键词" value="nosh"></label>-->
+<!--            <label>-->
+<!--                <button type="button" id="searchBtn"></button>-->
+<!--            </label></form>-->
+<!--        &lt;!&ndash;    </ul>&ndash;&gt;-->
+<!--    </div>-->
+<!--</nav>-->
+
+<!--<img src="img/index/bg.jpg" class="index-bg">-->
+<!--<div class="container">-->
+<!--    <h1>新闻发布系统</h1>-->
+<!--    <h4></h4>-->
+<!--    <div class="news-list">-->
+<!--        <%&#45;&#45;       大图 &#45;&#45;%>-->
+<!--        <div class="area" id="diy_chart">-->
+<!--            <div id="frame648i8N" class="frame move-span cl frame-1-3">-->
+<!--                <div id="frame648i8N_left" class="column frame-1-3-l">-->
+<!--                    <div id="portal_block_1106" class="block move-span">-->
+<!--                        <div id="portal_block_1106_content" class="dxb_bc" style="position: relative;">-->
+<!--                            <div class="module cl slidebox" id="0.8774978489999203" style="display: block;">-->
+<!--                                <ul class="slideshow">-->
+<!--                                    <li style="height: 225px; display: block;"><a-->
+<!--                                            href="index.jsp"><img-->
+<!--                                            src="/static/img/images/index.jpg"-->
+<!--                                            width="auto" height="225"></a><span class="title">更多新闻【预告，敬请期待】</span></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <%&#45;&#45;            中&#45;&#45;%>-->
+<!--                <div id="frame648i8N_center" class="column frame-1-3-r">-->
+<!--                    <div id="frameIUI5Gh" class="frame move-span cl frame-3-1">-->
+<!--                        <div id="frameIUI5Gh_left" class="column frame-3-1-l">-->
+<!--                            <div id="frameIUI5Gh_left_temp" class="move-span temp"></div>-->
+<!--                            <div id="frameLbN73m" class="frame move-span cl frame-1-1-1">-->
+<!--                                <div id="frameLbN73m_left" class="column frame-1-1-1-l">-->
+<!--                                    <div id="frameLbN73m_left_temp" class="move-span temp"></div>-->
+<!--                                    <div id="portal_block_1108" class="block move-span">-->
+<!--                                        <%&#45;&#45;                                要闻板块&#45;&#45;%>-->
+<!--                                        <div class="blocktitle title"><span class="titletext">要闻</span></div>-->
+<!--                                        <div id="portal_block_1108_content" class="dxb_bc">-->
+<!--                                            <div class="module cl xl xl1">-->
+<!--                                                <ul>-->
+<!--                                                    <c:forEach var="news"-->
+<!--                                                               items="${applicationScope.keyWordsList2}" begin="0"-->
+<!--                                                               end="9">-->
+<!--                                                        <li>-->
+<!--                                                            <a href="newsServlet?action=detailNews&id=${news.getId()}&from=user"-->
+<!--                                                               title="${news.getTitle()}"-->
+<!--                                                               target="_blank">${news.getTitle()}</a></li>-->
+<!--                                                    </c:forEach>-->
+<!--                                                </ul>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <%&#45;&#45;                                最新发表 &#45;&#45;%>-->
+<!--                                <div id="frameLbN73m_center" class="column frame-1-1-1-c">-->
+<!--                                    <div id="frameLbN73m_center_temp" class="move-span temp"></div>-->
+<!--                                    <div id="portal_block_1109" class="block move-span">-->
+<!--                                        <div class="blocktitle title"><span class="titletext">最新发表</span></div>-->
+<!--                                        <div id="portal_block_1109_content" class="dxb_bc">-->
+<!--                                            <div class="module cl xl xl1">-->
+<!--                                                <ul>-->
+<!--                                                    <c:forEach var="news" items="${requestScope.keyWords2}" begin="0" end="9"-->
+<!--                                                               varStatus="status">-->
+<!--                                                        <li>-->
+<!--                                                            <a href="newsServlet?action=detailNews&id=${news.getId()}&from=user"-->
+<!--                                                               title="${news.getTitle()}"-->
+<!--                                                               target="_blank">${news.getTitle()}</a></li>-->
+<!--                                                    </c:forEach>-->
+<!--                                                </ul>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <%&#45;&#45;                                热点追踪&#45;&#45;%>-->
+<!--                                <div id="frameLbN73m_right" class="column frame-1-1-1-r">-->
+<!--                                    <div id="frameLbN73m_right_temp" class="move-span temp"></div>-->
+<!--                                    <div id="portal_block_1110" class="block move-span">-->
+<!--                                        <div class="blocktitle title"><span class="titletext">热点追踪</span></div>-->
+<!--                                        <div id="portal_block_1110_content" class="dxb_bc">-->
+<!--                                            <div class="module cl xl xl1">-->
+<!--                                                <ul>-->
+<!--                                                    <c:forEach var="news"-->
+<!--                                                               items="${applicationScope.keyWordsList.get(4)}" begin="0"-->
+<!--                                                               end="9">-->
+<!--                                                        <li>-->
+<!--                                                            <a href="newsServlet?action=detailNews&id=${news.getId()}&from=user"-->
+<!--                                                               title="${news.getTitle()}"-->
+<!--                                                               target="_blank">${news.getTitle()}</a>-->
+<!--                                                        </li>-->
+<!--                                                    </c:forEach>-->
+<!--                                                </ul>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <%&#45;&#45;                        国际&#45;&#45;%>-->
+<!--                        <div id="frameIUI5Gh_center" class="column frame-3-1-r">-->
+<!--                            <div id="frameIUI5Gh_center_temp" class="move-span temp"></div>-->
+<!--                            <div id="tab35v6d9" class=" frame-tab move-span cl">-->
+<!--                                <div id="tab35v6d9_title" class="tab-title title column cl" switchtype="click">-->
+<!--                                    <ul class="tb cl">-->
+<!--                                        <li id="portal_block_1111" class="a">国际-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                                <div id="tab35v6d9_content" class="tb-c">-->
+<!--                                    <div id="portal_block_1111_content" class="dxb_bc" style="">-->
+<!--                                        <div class="module cl xl xl1">-->
+<!--                                            <ol>-->
+<!--                                                <c:forEach var="news" items="${applicationScope.keyWordsList.get(2)}" begin="0"-->
+<!--                                                           end="9" varStatus="status">-->
+<!--                                                    <li>-->
+<!--                                                        <img class="vm" src="${news.getImgPath()}"-->
+<!--                                                             width="16" height="16" alt="${news.getTitle()}"><a href="newsServlet?action=detailNews&id=${news.getId()}&from=user'"-->
+<!--                                                                                                                    target="_blank"-->
+<!--                                                                                                                    title="${news.getTitle()}">${status.index}.标题：${news.getTitle()}</a>-->
+<!--                                                    </li>-->
+<!--                                                </c:forEach>-->
+<!--                                            </ol>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <script type="text/javascript">initTab("tab35v6d9", "click");</script>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <%&#45;&#45;关键词分类&#45;&#45;%>-->
+<!--    <div class="mn">-->
+<!--        <div class="fl bm">-->
+<!--            <div class="bm bmw flg cl">-->
+<!--                <div class="bm_h cl">-->
+<!--                    <h2>-->
+<!--                        <a href="https://localhost:7780newsServlet?action=keyWords&keyWords=国内"-->
+<!--                           style="">国内</a></h2>-->
+<!--                </div>-->
+<!--                <div id="category_28" class="bm_c" style="">-->
+<!--                    <table cellspacing="0" cellpadding="0" class="fl_tb">-->
+<!--                        <tbody>-->
+<!--                        <tr>-->
+<!--                            <c:forEach items="${applicationScope.keyWordsList.get(1)}" var="news" varStatus="status">-->
+<!--                                <c:if test="${(status.index+1)mod 3 != 1}">-->
+<!--                                    <td class="fl_g" width="32.9%">-->
+<!--                                        <dl style="margin-left: 64px;">-->
+<!--                                            <dt>-->
+<!--                                                <div class="fl_icn_g" style="width: 64px;">-->
+<!--                                                    <a href="newsServlet?action=detailNews&id=${news.getId()}&from=user"><img-->
+<!--                                                            src="${news.getImgPath()}" align="left"-->
+<!--                                                            alt="${news.getTitle()}"></a></div>-->
+<!--                                                <a href="newsServlet?action=detailNews&id=${news.getId()}&from=user">-->
+<!--                                                    ${news.getType()}</a></dt>-->
+<!--                                            <dd>-->
+<!--                                                <span title="更新时间">最后发表:${news.getGetDate()}&nbsp;</span>-->
+<!--                                            </dd>-->
+<!--                                        </dl>-->
+<!--                                    </td>-->
+<!--                                </c:if>-->
+<!--                                <c:if test="${(status.index+1)mod 3 == 1}">-->
+<!--                        <tr class="fl_row">-->
+<!--                            <td class="fl_g" width="32.9%">-->
+<!--                                <dl style="margin-left: 64px;">-->
+<!--                                    <dt>-->
+<!--                                        <div class="fl_icn_g" style="width: 64px;">-->
+<!--                                            <a href="newsServlet?action=detailNews&id=${news.getId()}&from=user"><img-->
+<!--                                                    src="${news.getImgPath()}" align="left"-->
+<!--                                                    alt="${news.getTitle()}"></a></div>-->
+<!--                                        <a href="newsServlet?action=detailNews&id=${news.getId()}&from=user">-->
+<!--                                            ${news.getType()}</a></dt>-->
+<!--                                    <dd>-->
+<!--                                        <span title="更新时间">最后发表:${news.getGetDate()}&nbsp;</span>-->
+<!--                                    </dd>-->
+<!--                                </dl>-->
+<!--                            </td>-->
+<!--                            </c:if>-->
+<!--                            </c:forEach>-->
+<!--                        </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="bm bmw flg cl">-->
+<!--                <div class="bm_h cl">-->
+<!--    <span class="o">-->
+<!--    </span>-->
+<!--                    <h2>-->
+<!--                        <a href="#">分类</a></h2>-->
+<!--                </div>-->
+<!--                <div id="category_27" class="bm_c" style="">-->
+<!--                    <table cellspacing="0" cellpadding="0" class="fl_tb">-->
+<!--                        <tbody>-->
+<!--                        <tr>-->
+<!--                            <c:forEach items="${applicationScope.typeList}" var="news" varStatus="status">-->
+<!--                                <c:if test="${(status.index+1)mod 3 != 1}">-->
+<!--                                    <td class="fl_g" width="32.9%">-->
+<!--                                        <dl style="margin-left: 64px;">-->
+<!--                                            <dt>-->
+<!--                                                <a href="newsServlet?action=keyShow?key=${news.getType().getCategory()}">-->
+<!--                                                    ${news.getType()}</a></dt>-->
+<!--                                        </dl>-->
+<!--                                    </td>-->
+<!--                                </c:if>-->
+<!--                                <c:if test="${(status.index+1)mod 3 == 1}">-->
+<!--                        <tr class="fl_row">-->
+<!--                            <td class="fl_g" width="32.9%">-->
+<!--                                <dl style="margin-left: 64px;">-->
+<!--                                    <dt>-->
+<!--                                        <a href="newsServlet?action=keyShow?key=${news.getType()}">-->
+<!--                                            ${news.getType()}</a></dt>-->
+<!--                                </dl>-->
+<!--                            </td>-->
+<!--                            </c:if>-->
+<!--                            </c:forEach>-->
+<!--                        </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+<!--        </div>-->
+
+<!--        <div id="online" class="bm oll">-->
+<!--            <div class="bm_h">-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </div>-->
+<!--    <footer class="copyright">-->
+<!--    </footer>-->
+<!--</div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->

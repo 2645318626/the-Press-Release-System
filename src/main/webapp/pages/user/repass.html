@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="../../static/css/register.css" type="text/css">
+    <script>
+        window.onload = function () {
+            let repBtn = document.getElementById('repBtn');
+            let register_name = document.getElementById('register_name');
+            let register_email = document.getElementById('register_email');
+
+            repBtn.onclick = function () {
+                // 验证昵称
+                // 	* 不能为空，
+                // 	* 不能使用特殊字符（除数字、字母、下划线、横杠），
+                // 	* 长度6-20
+
+                if (!/[\u4E00-\u9FA5A-z0-9]{2,15}$/.test(register_name.value)) {
+                    if (register_name.value.trim() == "") {
+                        alert('昵称不能为空！');
+                    } else {
+                        alert('您输入的用户名不合法');
+                    }
+                    register_name.focus();
+                    return false;
+                }
+
+                /*
+                    电子邮件
+                        jinrong.xie@qq.com
+                        123@qq.com
+                        x_x@163.com
+                        x-x@a-r.com.cn
+                        x.x@laoxie.com
+                        邮箱用户名必须3-30个字符
+                 */
+                if (!/^[a-z0-9][\w\-\.]{2,29}@[a-z0-9\-]{2,67}(\.[a-z\u2E80-\u9FFF]{2,6})+$/.test(register_email.value)) {
+                    if (register_email.value.trim() == "") {
+                        alert('邮箱不能为空！');
+                    } else {
+                        alert('邮箱格式不合法');
+                    }
+                    register_email.focus();
+                    return false;
+                }
+                this.form.action = "/userServlet?action=repass";
+                this.form.submit();
+            };
+        };
+
+        //取出传回来的参数error并与yes比较
+        let errori = '<%=request.getParameter("error")%>';
+        if (errori == 'no') {
+            alert('该用户已存在！');
+        } else if (errori == 'failure') {
+            alert('注册失败！');
+        }
+    </script>
+</head>
+<body>
+<nav class="navbar">
+    <div class="container navbar-content">
+        <a href="test1_war_exploded/newsServlet?action=indexShow">首页</a>
+        <a href="#">关于我们</a>
+
+    </div>
+</nav>
+<div id="message">
+    <fieldset>
+        <legend>修改密码</legend>
+        <form method="post">
+            <p>
+                <span>昵称</span>
+                <input type="text" name="repUsername" class="username" id="register_name" placeholder="用户名">
+            </p>
+            <p>
+                <span>邮箱</span>
+                <input type="text" name="repEmail" class="email" id="register_email" placeholder="Email">
+            </p>
+            <p>
+                <button type="reset" id="resetBtn">重置</button>
+                <button type="submit" id="repBtn">提交</button>
+            </p>
+        </form>
+    </fieldset>
+</div>
+</body>
+</html>

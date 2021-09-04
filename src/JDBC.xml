@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<accounts>
+<!--    <account>-->
+<!--        <url>jdbc:mysql://localhost:3306/db.sql?useSSL=false&amp;serverTimezone=CTT</url>-->
+<!--        <user>root</user>-->
+<!--        <password>123456aaAA</password>-->
+<!--    </account>-->
+    <!-- 配置数据源 -->
+    <bean id="dataSource"
+          class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="jdbc:mysql://localhost:3306/db.sql"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456aaAA"/>
+    </bean>
+</accounts>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>新闻发布系统</title>
+  <link rel="stylesheet" href="css/index.css" type="text/css">
+  <link rel="stylesheet" href="css/text/style_1_common.css" type="text/css">
+  <link rel="stylesheet" href="css/text/style_1_forum_index.css" type="text/css">
+  <link rel="stylesheet" href="css/text/style_1_widthauto.css" type="text/css">
+  <script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+
+  <script>
+    window.onload = function () {
+      let loginBtn = document.getElementById('loginBtn');
+      let login_form = document.getElementById('login_form');
+      let login_name = document.getElementById('login_name');
+      let login_pwd = document.getElementById('login_pwd');
+      let searchBox = document.getElementById('searchBox');
+      let searchBtn = document.getElementById('searchBtn');
+
+      searchBtn.onclick = function () {
+        alert(searchBox.value);
+      }
+
+      loginBtn.onclick = function () {
+        if (login_name.value.trim() == "") {
+          alert("用户名不能为空!");
+          login_name.focus();
+          return false;
+        }
+        if (login_pwd.value.trim() == "") {
+          alert("密码不能为空!");
+          login_pwd.focus();
+          return false;
+        }
+        login_form.action = "/test1_war_exploded/userServlet";
+        login_form.submit();
+      }
+
+    }
+  </script>
+</head>
+<body>
+<div id="entry">
+  <div class="login1">
+    <form id="login_form" action="" method="post">
+      <label>用户名</label>
+      <input type="text" name="logUsername" id="login_name">
+      <label>密码</label>
+      <input type="password" name="logPassword" id="login_pwd">
+      <input type="button" id="loginBtn" value="登录">
+      <input type="button" id="registerBtn" onclick="window.location.href='register.html'" value="注册">
+      <a href="#" id="forgetPwd">忘记密码？</a>
+      <label id="error"></label>
+    </form>
+  </div>
+  <div class="login1" style="display: none">
+    <label>欢迎使用新闻发布系统！</label>
+    <a href="exit.jsp" target="_top">退出</a>
+  </div>
+
+  <div class="login2">
+    <a href="adminLogin.jsp">管理员入口</a>
+  </div>
+  <div class="login2" style="display: none">
+    <label>欢迎使用新闻发布系统！</label>
+    <a href="exit.jsp" target="_top">退出</a>
+  </div>
+</div>
+<!--<body class="menu">-->
+<nav class="navbar">
+  <!--    <ul class="nva">-->
+  <div class="container navbar-content">
+    <label><a href="#">首页</a></label>
+    <label class="location"><a href="#" id="newspages">新闻中心</a>
+      <ul class="sub-nav">
+        <div class="news_left">
+          <li><a href="#" class="new">娱乐</a></li>
+          <li><a href="#" class="new">社会</a></li>
+          <li><a href="#" class="new">财经</a></li>
+          <li><a href="#" class="new">科技</a></li>
+          <li><a href="#" class="new">健康</a></li>
+        </div>
+        <div class="news_right">
+          <li><a href="#" class="new">教育</a></li>
+          <li><a href="#" class="new">旅游</a></li>
+          <li><a href="#" class="new">军事</a></li>
+          <li><a href="#" class="new">其他</a></li>
+        </div>
+      </ul>
+    </label>
+    <!--已登陆-->
+    <label><a href="#">编辑新闻</a></label>
+    <label><a href="#">更多</a></label>
+    <form action="#">
+      <label><input type="text" id="searchBox" placeholder="关键词" value="nosh"></label>
+      <label>
+        <button type="button" id="searchBtn"></button>
+      </label></form>
+    <!--    </ul>-->
+  </div>
+</nav>
+
+<img src="img/index/bg.jpg" class="index-bg">
+<div class="container">
+  <h1>新闻发布系统</h1>
+  <h4></h4>
+  <div class="news-list">
+    <div class="area" id="diy_chart">
+      <div id="frame648i8N" class="frame move-span cl frame-1-3">
+        <div id="frame648i8N_left" class="column frame-1-3-l">
+          <div id="portal_block_1106" class="block move-span">
+            <div id="portal_block_1106_content" class="dxb_bc" style="position: relative;">
+              <div class="module cl slidebox" id="0.8774978489999203" style="display: block;">
+                <ul class="slideshow">
+                  <li style="height: 225px; display: block;"><a
+                          href="https://fishc.com.cn/thread-197989-1-1.html" target="_blank"><img
+                          src="https://xxx.ilovefishc.com/forum/202106/24/151800kr6m1hhbsawann65.png"
+                          width="auto" height="225"></a><span class="title">抽奖助手【预告，敬请期待】</span></li>
+                  <li style="height: 225px; display: none;"><a
+                          href="https://fishc.com.cn/thread-197955-1-1.html" target="_blank"><img
+                          src="https://xxx.ilovefishc.com/forum/202106/23/190902jmvvmbm8yy6zfyby.png"
+                          width="auto" height="225"></a><span class="title">求助！！害怕</span></li>
+                  <li style="height: 225px; display: none;"><a
+                          href="https://fishc.com.cn/thread-198059-1-1.html" target="_blank"><img
+                          src="https://xxx.ilovefishc.com/forum/202106/25/192024bp0i4oaaj5ia45vp.jpg"
+                          width="auto" height="225"></a><span
+                          class="title">在e30中小甲鱼的最后一个测试，绿色画了线</span></li>
+                  <li style="height: 225px; display: none;"><a
+                          href="https://fishc.com.cn/thread-198246-1-1.html" target="_blank"><img
+                          src="https://xxx.ilovefishc.com/forum/202106/29/131140nnu0cezeuja1neeh.png"
+                          width="auto" height="225"></a><span
+                          class="title">有接定制的大佬没？我帮朋友问的，预览 doc</span></li>
+                  <li style="height: 225px; display: none;"><a
+                          href="https://fishc.com.cn/thread-198122-1-1.html" target="_blank"><img
+                          src="https://xxx.ilovefishc.com/forum/202106/26/234149z51778x2qqm6mimq.png"
+                          width="auto" height="225"></a><span class="title">C语言初学</span></li>
+                  <li style="height: 225px; display: none;"><a
+                          href="https://fishc.com.cn/thread-198105-1-1.html" target="_blank"><img
+                          src="https://xxx.ilovefishc.com/forum/202106/26/164239kcddnlcn6n641n4u.jpg"
+                          width="auto" height="225"></a><span class="title">pyinstaller打包失败</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="frame648i8N_center" class="column frame-1-3-r">
+          <div id="frameIUI5Gh" class="frame move-span cl frame-3-1">
+            <div id="frameIUI5Gh_left" class="column frame-3-1-l">
+              <div id="frameIUI5Gh_left_temp" class="move-span temp"></div>
+              <div id="frameLbN73m" class="frame move-span cl frame-1-1-1">
+                <div id="frameLbN73m_left" class="column frame-1-1-1-l">
+                  <div id="frameLbN73m_left_temp" class="move-span temp"></div>
+                  <div id="portal_block_1108" class="block move-span">
+                    <!--                                      要闻板块-->
+                    <div class="blocktitle title"><span class="titletext"><a
+                            href="bestanswer.php?mod=huzhu&amp;type=undo" target="_blank"
+                            style="color:#000000 !important;">要闻</a></span></div>
+                    <div id="portal_block_1108_content" class="dxb_bc">
+                      <div class="module cl xl xl1">
+                        <ul>
+                          <li><a href="https://fishc.com.cn/thread-198275-1-1.html"
+                                 title="关于编程很难的感慨" target="_blank">关于编程很难的感慨</a></li>
+                          <li><a href="https://fishc.com.cn/thread-198269-1-1.html"
+                                 title="飞机大战出错" target="_blank">飞机大战出错</a></li>
+
+
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--                             最新发表   -->
+                <div id="frameLbN73m_center" class="column frame-1-1-1-c">
+                  <div id="frameLbN73m_center_temp" class="move-span temp"></div>
+                  <div id="portal_block_1109" class="block move-span">
+                    <div class="blocktitle title"><span class="titletext"><a
+                            href="https://fishc.com.cn/forum.php?mod=guide&amp;view=newthread"
+                            target="_blank" style="!important;">最新发表</a></span></div>
+                    <div id="portal_block_1109_content" class="dxb_bc">
+                      <div class="module cl xl xl1">
+                        <ul>
+                          <li><a href="https://fishc.com.cn/thread-198282-1-1.html"
+                                 title="关于栈空间大小的求助" target="_blank">关于栈空间大小的求助</a></li>
+                          <li><a href="https://fishc.com.cn/thread-198281-1-1.html"
+                                 title="矩阵乘法" target="_blank">矩阵乘法</a></li>
+
+
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="frameLbN73m_right" class="column frame-1-1-1-r">
+                  <div id="frameLbN73m_right_temp" class="move-span temp"></div>
+                  <div id="portal_block_1110" class="block move-span">
+                    <div class="blocktitle title"><span class="titletext"><a
+                            href="https://fishc.com.cn/forum.php?mod=guide&amp;view=digest"
+                            target="_blank" style="!important;">热点追踪</a></span></div>
+                    <div id="portal_block_1110_content" class="dxb_bc">
+                      <div class="module cl xl xl1">
+                        <ul>
+                          <li><a href="https://fishc.com.cn/thread-85863-1-1.html"
+                                 title="那些年我做过Web（H5+C3+Js）‘有趣’的面试题 |【索引帖】" target="_blank">那些年我做过Web（H5+C3+Js）‘有趣’的面</a>
+                          </li>
+                          <li><a href="https://fishc.com.cn/thread-140340-1-1.html"
+                                 title="【III】使用一句代码将[1, 2, 3, 4, 5, 6, 7, 8, 9]变成[(1, 2, 3), (4, 5, 6), (7..."
+                                 target="_blank">【III】使用一句代码将[1, 2, 3, 4, 5, 6, </a></li>
+                          <li><a href="https://fishc.com.cn/thread-120818-1-1.html"
+                                 title="100个经典例题(C语言) |【课程提到的】" target="_blank">100个经典例题(C语言)
+                            |【课程提到的】</a></li>
+
+
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="frameIUI5Gh_center" class="column frame-3-1-r">
+              <div id="frameIUI5Gh_center_temp" class="move-span temp"></div>
+              <div id="tab35v6d9" class=" frame-tab move-span cl">
+                <div id="tab35v6d9_title" class="tab-title title column cl" switchtype="click">
+                  <ul class="tb cl">
+                    <li id="portal_block_1111" class="a"><a href="javascript:;"
+                                                            onclick="return false;"
+                                                            onfocus="this.blur();"
+                                                            style="!important;">点击量排行榜</a>
+                    </li>
+                  </ul>
+                </div>
+                <div id="tab35v6d9_content" class="tb-c">
+                  <div id="portal_block_1111_content" class="dxb_bc" style="">
+                    <div class="module cl xl xl1">
+                      <ol>
+                        <li><img class="vm"
+                                 src="https://fishc.com.cn/ucenter/avatar.php?uid=9&amp;size=small"
+                                 width="16" height="16" alt="小甲鱼"> <a
+                                href="https://fishc.com.cn/space-uid-9.html" title="小甲鱼" c="1"
+                                target="_blank" mid="card_410">小甲鱼</a>：<a
+                                href="https://fishc.com.cn/misc.php?mod=ranklist&amp;type=member"
+                                target="_blank">最新进度：Web稿子已完结，剩下视频后期在跟进中！</a></li>
+                        <li><img class="vm"
+                                 src="https://fishc.com.cn/ucenter/avatar.php?uid=263749&amp;size=small"
+                                 width="16" height="16" alt="hldh214"> <a
+                                href="https://fishc.com.cn/space-uid-263749.html"
+                                title="hldh214" c="1" target="_blank"
+                                mid="card_2534">hldh214</a>：<a
+                                href="https://fishc.com.cn/misc.php?mod=ranklist&amp;type=member"
+                                target="_blank"></a></li>
+
+
+
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script type="text/javascript">initTab("tab35v6d9", "click");</script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="mn">
+    <div class="fl bm">
+      <div class="bm bmw  flg cl">
+        <div class="bm_h cl">
+          <h2><a href="https://fishc.com.cn/forum.php?gid=28" style="">国内</a></h2>
+        </div>
+        <div id="category_28" class="bm_c" style="">
+          <table cellspacing="0" cellpadding="0" class="fl_tb">
+            <tbody>
+            <tr>
+              <td class="fl_g" width="32.9%">
+                <div class="fl_icn_g" style="width: 64px;">
+                  <a href="https://fishc.com.cn/forum-38-1.html"><img
+                          src="data/attachment/common/a5/common_38_icon.png" align="left"
+                          alt="C\C++交流"></a></div>
+                <dl style="margin-left: 64px;">
+                  <dt><a href="https://fishc.com.cn/forum-38-1.html">C\C++交流</a><em
+                          class="xw0 xi1" title="今日"> (12)</em></dt>
+                  <dd><em>主题: <span title="29177">2万</span></em>, <em>帖数: <span
+                          title="536682">53万</span></em></dd>
+                  <dd>
+                    <a href="https://fishc.com.cn/forum.php?mod=redirect&amp;tid=67467&amp;goto=lastpost#lastpost">最后发表:
+                      <span title="2021-6-30 07:21">12&nbsp;分钟前</span></a>
+                  </dd>
+                </dl>
+              </td>
+              <td class="fl_g" width="32.9%">
+                <div class="fl_icn_g" style="width: 64px;">
+                  <a href="https://fishc.com.cn/forum-173-1.html"><img
+                          src="data/attachment/common/f7/common_173_icon.png" align="left"
+                          alt="Python交流"></a></div>
+                <dl style="margin-left: 64px;">
+                  <dt><a href="https://fishc.com.cn/forum-173-1.html">Python交流</a><em
+                          class="xw0 xi1" title="今日"> (38)</em></dt>
+                  <dd><em>主题: <span title="53930">5万</span></em>, <em>帖数: <span
+                          title="1877383">187万</span></em>
+                  </dd>
+                  <dd>
+                    <a href="https://fishc.com.cn/forum.php?mod=redirect&amp;tid=161405&amp;goto=lastpost#lastpost">最后发表:
+                      <span title="2021-6-30 07:30">3&nbsp;分钟前</span></a>
+                  </dd>
+                </dl>
+              </td>
+              <td class="fl_g" width="32.9%">
+                <div class="fl_icn_g" style="width: 64px;">
+                  <a href="https://fishc.com.cn/forum-79-1.html"><img
+                          src="data/attachment/common/d1/common_79_icon.png" align="left"
+                          alt="数据结构与算法"></a></div>
+                <dl style="margin-left: 64px;">
+                  <dt><a href="https://fishc.com.cn/forum-79-1.html">数据结构与算法</a></dt>
+                  <dd><em>主题: 3056</em>, <em>帖数: <span title="32338">3万</span></em></dd>
+                  <dd>
+                    <a href="https://fishc.com.cn/forum.php?mod=redirect&amp;tid=198255&amp;goto=lastpost#lastpost">最后发表:
+                      <span title="2021-6-29 16:25">昨天&nbsp;16:25</span></a>
+                  </dd>
+                </dl>
+              </td>
+            </tr>
+            <tr class="fl_row">
+              <td class="fl_g" width="32.9%">
+                <div class="fl_icn_g" style="width: 64px;">
+                  <a href="https://fishc.com.cn/forum-207-1.html"><img
+                          src="data/attachment/common/69/common_207_icon.png" align="left"
+                          alt="Windows程序设计"></a></div>
+                <dl style="margin-left: 64px;">
+                  <dt><a href="https://fishc.com.cn/forum-207-1.html">Windows程序设计</a></dt>
+                  <dd><em>主题: 2030</em>, <em>帖数: <span title="24003">2万</span></em></dd>
+                  <dd>
+                    <a href="https://fishc.com.cn/forum.php?mod=redirect&amp;tid=65935&amp;goto=lastpost#lastpost">最后发表:
+                      <span title="2021-6-29 19:43">昨天&nbsp;19:43</span></a>
+                  </dd>
+                </dl>
+              </td>
+              <td class="fl_g" width="32.9%">
+                <div class="fl_icn_g" style="width: 64px;">
+                  <a href="https://fishc.com.cn/forum-171-1.html"><img
+                          src="data/attachment/common/a4/common_171_icon.png" align="left"
+                          alt="Web开发"></a></div>
+                <dl style="margin-left: 64px;">
+                  <dt><a href="https://fishc.com.cn/forum-171-1.html">Web开发</a></dt>
+                  <dd><em>主题: 3386</em>, <em>帖数: <span title="62069">6万</span></em></dd>
+                  <dd>
+                    <a href="https://fishc.com.cn/forum.php?mod=redirect&amp;tid=107172&amp;goto=lastpost#lastpost">最后发表:
+                      <span title="2021-6-29 23:35">昨天&nbsp;23:35</span></a>
+                  </dd>
+                </dl>
+              </td>
+              <td class="fl_g" width="32.9%">
+                <div class="fl_icn_g" style="width: 64px;">
+                  <a href="https://fishc.com.cn/forum-219-1.html"><img
+                          src="data/attachment/common/c0/common_219_icon.png" align="left"
+                          alt="哇！Linux"></a></div>
+                <dl style="margin-left: 64px;">
+                  <dt><a href="https://fishc.com.cn/forum-219-1.html">哇！Linux</a></dt>
+                  <dd><em>主题: 1298</em>, <em>帖数: <span title="22189">2万</span></em></dd>
+                  <dd>
+                    <a href="https://fishc.com.cn/forum.php?mod=redirect&amp;tid=127703&amp;goto=lastpost#lastpost">最后发表:
+                      <span title="2021-6-29 21:44">昨天&nbsp;21:44</span></a>
+                  </dd>
+                </dl>
+              </td>
+            </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="bm bmw  flg cl">
+        <div class="bm_h cl">
+<span class="o">
+<img id="category_27_img" src="static/image/common/collapsed_no.gif">
+</span>
+          <h2><a href="https://fishc.com.cn/forum.php?gid=27" style="">国际</a></h2>
+        </div>
+        <div id="category_27" class="bm_c" style="">
+          <table cellspacing="0" cellpadding="0" class="fl_tb">
+            <tbody>
+            <tr>
+              <td class="fl_g" width="49.9%">
+                <div class="fl_icn_g" style="width: 64px;">
+                  <a href="https://fishc.com.cn/forum-33-1.html"><img
+                          src="data/attachment/common/18/common_33_icon.png" align="left"
+                          alt="吹水阁"></a></div>
+                <dl style="margin-left: 64px;">
+                  <dt><a href="https://fishc.com.cn/forum-33-1.html">吹水阁</a><em class="xw0 xi1"
+                                                                                title="今日">
+                    (2)</em></dt>
+                  <dd><em>主题: <span title="11872">1万</span></em>, <em>帖数: <span
+                          title="263965">26万</span></em></dd>
+                  <dd>
+                    <a href="https://fishc.com.cn/forum.php?mod=redirect&amp;tid=197938&amp;goto=lastpost#lastpost"
+                       class="xi2">送鱼币 |【100%育碧福利】</a> <cite><span title="2021-6-30 07:13">20&nbsp;分钟前</span>
+                    <a href="https://fishc.com.cn/space-username-oldcar.html">oldcar</a></cite>
+                  </dd>
+                </dl>
+              </td>
+              <td class="fl_g" width="49.9%">
+                <div class="fl_icn_g" style="width: 64px;">
+                  <a href="https://fishc.com.cn/forum-198-1.html"><img
+                          src="data/attachment/common/0e/common_198_icon.png" align="left"
+                          alt="音乐小铺"></a></div>
+                <dl style="margin-left: 64px;">
+                  <dt><a href="https://fishc.com.cn/forum-198-1.html">音乐小铺</a></dt>
+                  <dd><em>主题: 156</em>, <em>帖数: 7759</em></dd>
+                  <dd>
+                    <a href="https://fishc.com.cn/forum.php?mod=redirect&amp;tid=72975&amp;goto=lastpost#lastpost"
+                       class="xi2">2016.6.19-音乐小铺第114期—— ...</a> <cite>2021-5-31 23:03 <a
+                          href="https://fishc.com.cn/space-username-wuqramy.html">wuqramy</a></cite>
+                  </dd>
+                </dl>
+              </td>
+            </tr>
+            <tr class="fl_row">
+              <td class="fl_g" width="49.9%">
+                <div class="fl_icn_g" style="width: 64px;">
+                  <a href="https://fishc.com.cn/forum-308-1.html"><img
+                          src="data/attachment/common/a8/common_308_icon.png" align="left"
+                          alt="侦探事务所"></a></div>
+                <dl style="margin-left: 64px;">
+                  <dt><a href="https://fishc.com.cn/forum-308-1.html">侦探事务所</a></dt>
+                  <dd><em>主题: 536</em>, <em>帖数: <span title="17499">1万</span></em></dd>
+                  <dd>
+                    <a href="https://fishc.com.cn/forum.php?mod=redirect&amp;tid=56092&amp;goto=lastpost#lastpost"
+                       class="xi2">小芳的死</a> <cite><span
+                          title="2021-6-29 09:24">昨天&nbsp;09:24</span> <a
+                          href="https://fishc.com.cn/space-username-227%BD%F8%BB%F7%B0%C9.html">227进击吧</a></cite>
+                  </dd>
+                </dl>
+              </td>
+              <td class="fl_g" width="49.9%">
+                <div class="fl_icn_g" style="width: 64px;">
+                  <a href="https://fishc.com.cn/forum-192-1.html"><img
+                          src="data/attachment/common/58/common_192_icon.png" align="left"
+                          alt="IT英语版块"></a></div>
+                <dl style="margin-left: 64px;">
+                  <dt><a href="https://fishc.com.cn/forum-192-1.html">IT英语版块</a></dt>
+                  <dd><em>主题: 1339</em>, <em>帖数: <span title="22645">2万</span></em></dd>
+                  <dd>
+                    <a href="https://fishc.com.cn/forum.php?mod=redirect&amp;tid=66866&amp;goto=lastpost#lastpost"
+                       class="xi2">快速提高英语的办法</a> <cite><span
+                          title="2021-6-29 12:52">昨天&nbsp;12:52</span>
+                    <a href="https://fishc.com.cn/space-username-cc558.html">cc558</a></cite>
+                  </dd>
+                </dl>
+              </td>
+            </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="wp mtn">
+      <!--[diy=diy3]-->
+      <div id="diy3" class="area"></div><!--[/diy]-->
+    </div>
+
+    <div id="online" class="bm oll">
+      <div class="bm_h">
+                    <span class="o"><a href="https://fishc.com.cn/forum.php?showoldetails=yes#online" title="收起/展开"><img
+                            src="static/image/common/collapsed_yes.gif" alt="收起/展开"></a></span>
+        <h3>
+          <strong>
+            在线会员
+          </strong>
+          <span class="xs1">- 总计 <strong>1147</strong> 人在线
+- 最高记录是 <strong>11000</strong> 于 <strong>2018-10-2</strong>.</span>
+        </h3>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="copyright">
+  </footer>
+</div>
+</div>
+</body>
+</html>

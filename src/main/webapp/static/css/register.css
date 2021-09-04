@@ -1,0 +1,97 @@
+html, body {
+    background-image: url("../img/index/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar {
+    background: url("../img/index/header_shadow.png") no-repeat left top;
+    background-size: 100% 54px;
+    z-index: 999;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+div.container.navbar-content {
+    height: 45px;
+}
+
+.navbar .navbar-content a {
+    color: #FFF;
+    line-height: 54px;
+    display: inline-block;
+    width: 100px;
+    height: 54px;
+    text-align: center;
+}
+
+.navbar .navbar-content a:hover {
+    color: #CCC;
+}
+
+#message {
+    filter: alpha(opacity=20);
+    -moz-opacity: 0.9;
+    opacity: 0.9;
+}
+
+fieldset {
+    border: 0px;
+}
+
+div {
+    background: transparent;
+    width: 500px;
+    height: 600px;
+    margin: 30px auto;
+}
+
+input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+p {
+    width: 250px;
+    margin: 40px auto;
+}
+form{
+    width:450px;
+    margin:0 auto;
+}
+legend {
+    font-family: STXingkai;
+    font-size: 40px;
+    text-align: center;
+}
+
+span, #resetBtn, #submitformBtn, #repBtn, #loginBtn {
+    font-family: STXingkai;
+    font-size: 20px;
+}
+
+#repBtn, #submitformBtn, #resetBtn, #loginBtn {
+    display: inline-block;
+    margin-left: 20px;
+    width: 90px;
+    height: 36px;
+    border-color: transparent;
+    background-color: cadetblue;
+    border-radius: 30px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
